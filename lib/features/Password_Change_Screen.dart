@@ -4,6 +4,7 @@ import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import '../core/Routing/app_routes.dart';
 import '../core/images/iamges.dart';
 class PasswordChangeScreen extends StatelessWidget {
   const PasswordChangeScreen({super.key});
@@ -50,9 +51,9 @@ class PasswordChangeScreen extends StatelessWidget {
                 height: 54.h,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.popUntil(context, ModalRoute.withName('/login'));
-
+                    GoRouter.of(context).go(AppRoutes.loginScreen);
                   },
+
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF6374FF),
                     shape: RoundedRectangleBorder(

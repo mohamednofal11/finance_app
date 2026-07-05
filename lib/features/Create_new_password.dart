@@ -35,6 +35,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
           body:Padding
             (padding:EdgeInsetsGeometry.symmetric(horizontal: 8.r) ,
             child: Form(
+              key: formkey,
               child: Column(
                 children: [
                   Gap(22),
@@ -81,8 +82,9 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                     buttonText: 'Reset Password',
                     onPress: (){
                       if(formkey.currentState!.validate()){
+                        GoRouter.of(context).push(AppRoutes.passwordchange);
                       }
-                      GoRouter.of(context).push(AppRoutes.passwordchange);
+
 
 
                     },

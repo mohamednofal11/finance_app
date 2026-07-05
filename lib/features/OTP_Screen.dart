@@ -98,9 +98,10 @@ class _OtpScreenState extends State<OtpScreen> {
                   PrimaryButtonWidget(
                     buttonText: "Verify",
                     onPress: () {
-                     GoRouter.of(context).push(AppRoutes.createnewpassword);
+
 
                       if (formkey.currentState!.validate()) {
+                        GoRouter.of(context).push(AppRoutes.createnewpassword);
                       }
                     },
                   ),

@@ -105,9 +105,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     PrimaryButtonWidget(
                       buttonText: "Register",
                       onPress: (){
-                        GoRouter.of(context).push(AppRoutes.forgetPassword);
-                       if (formkey.currentState!.validate()){
-                       }
+                        if (formkey.currentState!.validate()){
+                          GoRouter.of(context).push(AppRoutes.forgetPassword);
+                        }
+
+
                       },
                     ),
                     Gap(30),

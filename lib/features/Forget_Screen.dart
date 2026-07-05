@@ -79,8 +79,9 @@ class _ForgetScreenState extends State<ForgetScreen> {
                   PrimaryButtonWidget(
                     buttonText: "Send Code",
                     onPress: (){
-                      GoRouter.of(context).push(AppRoutes.otpScreen);
+
                       if(formkey.currentState!.validate()){
+                        GoRouter.of(context).push(AppRoutes.otpScreen);
                       }
                     },
                   ),
