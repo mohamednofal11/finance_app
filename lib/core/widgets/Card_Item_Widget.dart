@@ -106,7 +106,7 @@ class CardItemWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // رقم الكارت المتغير
+
                       Text(
                         cardNumber,
                         style: TextStyle(
@@ -116,7 +116,7 @@ class CardItemWidget extends StatelessWidget {
                           letterSpacing: 1,
                         ),
                       ),
-                      // التاريخ المتغير
+
                       Text(
                         expiryDate,
                         style: TextStyle(

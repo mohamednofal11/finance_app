@@ -13,12 +13,12 @@ class CustomCarouselWidget extends StatefulWidget {
 }
 
 class _CustomCarouselWidgetState extends State<CustomCarouselWidget> {
-  // استخدام ValueNotifier لمراقبة الصفحة الحالية وضمان تحديث النقط فوراً
+
   final ValueNotifier<int> _currentPageNotifier = ValueNotifier<int>(0);
 
   @override
   void dispose() {
-    _currentPageNotifier.dispose(); // تنظيف الـ Notifier عند الخروج
+    _currentPageNotifier.dispose();
     super.dispose();
   }
 
@@ -30,17 +30,17 @@ class _CustomCarouselWidgetState extends State<CustomCarouselWidget> {
           options: CarouselOptions(
             height: 263.h,
             padEnds: false,
-            enableInfiniteScroll: false, // مخلينها false عشان كارتين بس والتمرير يكون مظبوط
+            enableInfiniteScroll: false,
             viewportFraction: 0.7,
             enlargeCenterPage: true,
             enlargeFactor: 0.05,
             onPageChanged: (index, reason) {
-              // هنا بنحدث القيمة والـ ValueListenableBuilder تحت هيحدث النقط لوحدها فوراً
+
               _currentPageNotifier.value = index;
             },
           ),
           items: [
-            // الكارت الأول
+
             const CardItemWidget(
               width: 207,
               height: 263,
@@ -55,11 +55,11 @@ class _CustomCarouselWidgetState extends State<CustomCarouselWidget> {
               ],
             ),
 
-            // الكارت الثاني
+
             const CardItemWidget(
               width: 327,
               height: 179,
-              cardName: 'Nofal', // تقدر تغير البيانات هنا براحتك
+              cardName: 'Nofal',
               balance: '3,209 EG',
               cardNumber: '**** 4545',
               expiryDate: '10/28',
@@ -72,13 +72,13 @@ class _CustomCarouselWidgetState extends State<CustomCarouselWidget> {
         ),
         const Gap(16),
 
-        // الـ Builder ده بيراقب التغيير ويحدث الـ DotsIndicator لوحده بدون تعليق
+
         ValueListenableBuilder<int>(
           valueListenable: _currentPageNotifier,
           builder: (context, activeIndex, child) {
             return DotsIndicator(
               dotsCount: 2,
-              position: activeIndex.toDouble(), // تحويل الـ int لـ double عشان الإيرور
+              position: activeIndex.toDouble(),
               decorator: DotsDecorator(
                 size: const Size.square(9.0),
                 activeSize: const Size(18.0, 9.0),

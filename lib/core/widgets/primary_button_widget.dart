@@ -25,6 +25,7 @@ class PrimaryButtonWidget extends StatelessWidget {
     this.onPress,
     this.fontSize ,
 
+
   });
   @override
   Widget build(BuildContext context) {

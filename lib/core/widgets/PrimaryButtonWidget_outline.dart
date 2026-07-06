@@ -4,7 +4,7 @@ import 'package:finance/core/styling/app_colors.dart';
 
 class PrimaryButtonWidgetOutline extends StatelessWidget {
   final String? buttonText;
-  final Color? buttonColor; // سيتم استخدامه كلون للإطار (Border)
+  final Color? buttonColor;
   final double? width;
   final double? height;
   final double? bordersRadius;
@@ -44,9 +44,9 @@ class PrimaryButtonWidgetOutline extends StatelessWidget {
       child: Text(
         buttonText ?? " ",
         style: TextStyle(
-          // جعل لون الخط الافتراضي هو الـ Primary Color
+
           color: textColor ?? AppColors.primaryColor,
-          fontSize: fontSize ?? 16.sp, // تم إضافة حجم الخط
+          fontSize: fontSize ?? 16.sp,
           fontWeight: FontWeight.bold,
         ),
       ),
